@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <title>Annas Portfolio</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #111;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            color: #f39c12;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        nav .links {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav .links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        section {
+            display: none;
+            padding: 100px 50px;
+            min-height: 100vh;
+            background-color: black;
+        }
+
+        section#home {
+            display: block;
+        }
+
+        section h2 {
+            color: #f39c12;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            color: white;
+        }
+
+        .developer-title {
+            font-size: 1.5em;
+            color: #f39c12;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .section-image {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .skills-grid, .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .skill-item, .service-item {
+            text-align: center;
+        }
+
+        .skill-item h3, .service-item h3 {
+            margin-top: 10px;
+            color: #f39c12;
+        }
+
+        .service-item img {
+            width: 100%;
+            height: auto;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+        }
+
+        footer p {
+            color: #f39c12;
+        }
+
+        /* Ensuring sections take up the full viewport height */
+        section {
+            min-height: calc(100vh - 70px); /* Ensure section takes up the remaining space minus the nav height */
+            padding-bottom: 50px; /* Add bottom padding for better spacing */
+        }
+
+        /* Ensuring contact section visibility */
+        #contact {
+            padding-bottom: 150px; /* Extra padding for the Contact section */
+        }
+        #contact h2 {
+            position: relative;
+            top: 60%; /* Only partially show the title */
+            color: #f39c12;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+            Annas <span>Shaik</span>
+        </div>
+        <div class="links">
+            <a onclick="showSection('home')">Home</a>
+            <a onclick="showSection('about')">About</a>
+            <a onclick="showSection('skills')">Skills</a>
+            <a onclick="showSection('services')">Services</a>
+            <a onclick="showSection('contact')">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="main-container">
+            <div class="content">
+                <h1>Hey, I'm <span>Annas</span></h1>
+                <!-- Typed.js animated text -->
+                <p class="developer-title">
+                    I'm a <span id="typed"></span>
+                </p>
+            </div>
+            <img src="images/annas.jpg" alt="Home Image" class="section-image">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello, I'm Annas, a passionate web developer. I love building creative and responsive websites that offer great user experiences.</p>
+        <img src="images/annas.jpg" alt="About Image" class="section-image">
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>My Skills</h2>
+        <p>I specialize in a wide range of technologies that bring websites to life!</p>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <h3>HTML</h3>
+                <img src="images/html.png" alt="HTML Icon" class="section-image">
+            </div>
+            <div class="skill-item">
+                <h3>CSS</h3>
+                <img src="images/css.png" alt="CSS Icon" class="section-image">
+            </div>
+            <div class="skill-item">
+                <h3>JavaScript</h3>
+                <img src="images/js.jpeg" alt="JavaScript Icon" class="section-image">
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services">
+        <h2>My Services</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="images/web.jpg" alt="Web Development Service">
+                <h3>Web Development</h3>
+                <p>I create responsive, user-friendly websites that enhance your online presence.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/web design.jpg" alt="Web Design Service">
+                <h3>Web Design</h3>
+                <p>Providing creative and aesthetically pleasing designs for your websites.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/seo.jpg" alt="SEO Service">
+                <h3>SEO Optimization</h3>
+                <p>Ensuring your website ranks high in search engines for maximum visibility.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you're interested in collaborating, feel free to reach out via <a href="mailto:annasshaik724@gamil.com">annasshaik724@gmail.com</a>.</p>
+        <img src="images/contact.jpeg" alt="Contact Image" class="section-image">
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Created by Shaik Farahana</p>
+    </footer>
+
+    <!-- Typed.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script>
+        // Initialize Typed.js for the "I'm a web developer" animation
+        var typed = new Typed('#typed', {
+            strings: ["web developer.", "creative coder.", "technology enthusiast."],
+            typeSpeed: 50,
+            backSpeed: 25,
+            loop: true
+        });
+
+        // Function to switch between sections
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.display = (section.id === sectionId) ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+
+</html>
